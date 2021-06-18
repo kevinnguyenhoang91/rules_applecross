@@ -1,5 +1,9 @@
-build --define=RULES_SWIFT_BUILD_DUMMY_WORKER=1
-build --strategy=SwiftCompile=sandboxed,local
+build --strategy=SwiftCompile=local
+build --strategy=ObjcCompile=local
+build --strategy=ObjcLink=local
+build --strategy=CppLink=local
+build --genrule_strategy=local
+build --spawn_strategy=local
 
 build --apple_crosstool_top=@apple_cross_toolchain//:toolchain
 build --incompatible_strict_action_env
