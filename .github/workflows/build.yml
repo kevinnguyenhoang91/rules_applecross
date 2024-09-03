@@ -30,11 +30,11 @@ jobs:
     needs: build
     runs-on: macOS-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: Tests
       - run: (tar -xf Tests.tar.xz && cd Tests.runfiles/rules_applecross && exec env - PATH=/bin:/usr/bin examples/ios/HelloWorldSwiftUI/Tests)
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: UITests
       - run: (tar -xf UITests.tar.xz && cd UITests.runfiles/rules_applecross && exec env - PATH=/bin:/usr/bin examples/ios/HelloWorldSwiftUI/UITests)
